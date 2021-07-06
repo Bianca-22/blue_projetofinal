@@ -1,14 +1,38 @@
 class Personagem:
     def __init__(self, nome='Thiago'):
-        self.name = nome
-        self.saude = 100
-        self.relacionamento = 100
-        self.dinheiro = 150
-        self.estresse = 0
-        self.xp = 0
+        self.__nome = nome
+        self.__saude = 100
+        self.__relacionamento = 100
+        self.__dinheiro = 150
+        self.__estresse = 0
+        self.__xp = 0
+
+    @property
+    def nome(self):
+        return self.__nome
+    
+    @property
+    def saude(self):
+        return self.__saude
+
+    @property
+    def relacionamento(self):
+        return self.__relacionamento
+    
+    @property
+    def dinheiro(self):
+        return self.__dinheiro
+    
+    @property
+    def estresse(self):
+        return self.__estresse
+    
+    @property
+    def xp(self):
+        return self.__xp
     
     def __str__(self):
-        return f'Saúde: {self.saude}\nRelacionamento: {self.relacionamento}\nDinheiro: {self.dinheiro}\nEstresse: {self.estresse}\n Experiência: {self.xp}'
+        return f'Saúde: {self.__saude}\nRelacionamento: {self.__relacionamento}\nDinheiro: {self.__dinheiro}\nEstresse: {self.__estresse}\n Experiência: {self.__xp}'
 
     def _avaliar(self, valor):
         if valor > 100:
@@ -19,27 +43,21 @@ class Personagem:
             return valor
 
     def dormir(self):
-        self.saude += 20
-        self.saude = self._avaliar(self.saude)
-        self.estresse -= 50
-        if self.estresse < 0:
-            self.estresse = 0
+        self.__saude += 20
+        self.__saude = self._avaliar(self.__saude)
+        self.__estresse -= 50
+        self.__estresse = self._avaliar(self.__estresse)
 
     def passear(self):
-        self.relacionamento += 20
-        if self.relacionamento > 100:
-            self.relacionamento = 100
-        self.estresse -= 20
-        if self.estresse < 0:
-            self.estresse = 0
-        self.saude -= 30
-        if self.saude < 0:
-            self.saude = 0
+        self.__relacionamento += 20
+        self.__relacionamento = self._avaliar(self.__relacionamento)
+        self.__estresse -= 20
+        self.__estresse = self._avaliar(self.__estresse)
+        self.__saude -= 30
+        self.__saude = self._avaliar(self.__saude)
     
     def netflix(self):
-        self.estresse -= 20
-        if self.estresse < 0:
-            self.estresse = 0
-        self.relacionamento -= 20
-        if self.relacionamento < 0:
-            self.relacionamento = 0
+        self.__estresse -= 20
+        self.__estresse = self._avaliar(self.__estresse)
+        self.__relacionamento -= 20
+        self.__relacionamento = self._avaliar(self.__relacionamento)
