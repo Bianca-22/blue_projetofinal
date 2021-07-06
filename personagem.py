@@ -73,6 +73,7 @@ class Personagem:
         self.__estresse -= 10
         self.__estresse = self._avaliar(self.__estresse)
         self.__xp += 10
+        self.__relacionamento -= 10
 
     def academia(self):
         self.__saude += 30
