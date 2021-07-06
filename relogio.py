@@ -30,3 +30,4 @@ class Relogio:
         while self.__horas >= 24:
             self.__horas -= 24
             self.__dia += 1
+            

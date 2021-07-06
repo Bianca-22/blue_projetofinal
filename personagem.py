@@ -44,22 +44,43 @@ class Personagem:
         else:
             return valor
 
-    def dormir(self):
-        self.__saude += 20
-        self.__saude = self._avaliar(self.__saude)
-        self.__estresse -= 50
-        self.__estresse = self._avaliar(self.__estresse)
+    # def dormir(self):
+    #     self.__saude += 20
+    #     self.__saude = self._avaliar(self.__saude)
+    #     self.__estresse -= 50
+    #     self.__estresse = self._avaliar(self.__estresse)
 
-    def passear(self):
-        self.__relacionamento += 20
-        self.__relacionamento = self._avaliar(self.__relacionamento)
-        self.__estresse -= 20
-        self.__estresse = self._avaliar(self.__estresse)
-        self.__saude -= 30
-        self.__saude = self._avaliar(self.__saude)
+    # def passear(self):
+    #     self.__relacionamento += 20
+    #     self.__relacionamento = self._avaliar(self.__relacionamento)
+    #     self.__estresse -= 20
+    #     self.__estresse = self._avaliar(self.__estresse)
+    #     self.__saude -= 30
+    #     self.__saude = self._avaliar(self.__saude)
     
-    def netflix(self):
-        self.__estresse -= 20
+    # def netflix(self):
+    #     self.__estresse -= 20
+    #     self.__estresse = self._avaliar(self.__estresse)
+    #     self.__relacionamento -= 20
+    #     self.__relacionamento = self._avaliar(self.__relacionamento)
+
+    def youtube(self):
+        self.__estresse -= 10
         self.__estresse = self._avaliar(self.__estresse)
+        self.__xp += 10
+
+    def instagram(self):
+        self.__estresse -= 10
+        self.__estresse = self._avaliar(self.__estresse)
+        self.__xp += 10
+
+    def academia(self):
+        self.__saude += 30
+        self.__saude = self._avaliar(self.__saude)
         self.__relacionamento -= 20
-        self.__relacionamento = self._avaliar(self.__relacionamento)
+        self.__dinheiro -= 20
+
+    def projetosocial(self):
+        self.__relacionamento += 10
+        self.__estresse += 10
+        self.__xp += 10
