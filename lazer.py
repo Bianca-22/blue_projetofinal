@@ -1,24 +1,5 @@
-from personagem import Personagem
-from relogio import Relogio
-from random import randint
 
-relogio = Relogio()
-thiago = Personagem()
-
-if __name__ == '__main__':
-
-    while True:
-
-        escolha = int(input('''Escolha uma opção:
-        [ 1 ] Lazer
-        [ 2 ] Trabalho
-        [ 3 ] Estudo
-        [ 4 ] Cuidar da casa
-        [ 5 ] Projetos pessoais\n
-        O que você quer fazer? '''))
-
-        if escolha == 1:
-            lazer = int(input('''\nEscolha uma das opções de lazer:
+            lazer = input(('''\nEscolha uma das opções de lazer:
             [ 1 ] Dormir
             [ 2 ] Caminhar no Parque
             [ 3 ] Assistir HBO Max
@@ -105,14 +86,4 @@ if __name__ == '__main__':
                         print(f'Acalma o coração. Agora são {relogio.horas:02d}:{relogio.minutos:02d}, não está na hora de jantar.')
                     else:
                         print(f'Como você quer preparar um jantar com apenas R${thiago.dinheiro:.2f}? Vá trabalhar!')
-                    continue            
-
-        print()
-        print(relogio)
-        print()
-        print(thiago)
-        print()
-
-        if thiago.saude == 0:
-                print('GAME OVER')
-                break
+                    continue

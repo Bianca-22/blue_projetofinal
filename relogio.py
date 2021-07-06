@@ -1,7 +1,7 @@
 class Relogio:
     def __init__(self):
         self.__dia = 1
-        self.__horas = 0
+        self.__horas = 7
         self.__minutos = 0
     
     @property
