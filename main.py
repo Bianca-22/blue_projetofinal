@@ -1,4 +1,4 @@
-#teste de edição de eduardo_branch
+#eduardo_branch
 
 from personagem import Personagem
 from relogio import Relogio
