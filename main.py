@@ -1,6 +1,8 @@
 from personagem import Personagem
 from relogio import Relogio
 from random import randint
+from tabulate import tabulate
+
 
 relogio = Relogio()
 thiago = Personagem()
@@ -131,3 +133,7 @@ if __name__ == '__main__':
         if thiago.saude == 0:
                 print('GAME OVER')
                 break
+        
+        print(relogio)
+        print(thiago)        
+
