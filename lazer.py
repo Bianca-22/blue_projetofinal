@@ -4,7 +4,7 @@
             [ 2 ] Caminhar no Parque
             [ 3 ] Assistir HBO Max
             [ 4 ] Jantar Romântico
-            [ 5 ] Jogo de Tabuleiro\n
+            [ 5 ] Jogar vôlei\n
             O que você quer fazer? '''))
 
             if lazer == 1:
@@ -85,3 +85,24 @@
                     else:
                         print(f'Como você quer preparar um jantar com apenas R${thiago.dinheiro:.2f}? Vá trabalhar!')
                     continue
+
+            elif lazer == 5:
+                
+                if thiago.saude >= 50 and thiago.dinheiro >= 30:
+                    if opcao == 1:
+                        relogio.avancaTempo(2, 30)
+                        thiago.atribuirValores(saude = 30, dinheiro = -30, estresse = -50)
+                        print('Você se divertiu muito jogando vôlei com os seu amigos! Ao final do jogo você foi comer com eles e gastou R$ 30,00. Foi uma ótimo momento!')
+                    
+                    else:
+                        relogio.avancaTempo(2)
+                        thiago.atibruirValores(saude = -50, dinheiro = -30, estresse = 20)
+                        print('Jogo traumático... Ao saltar para dar o corte, você chocou sua cabeça com a de um amigo e ficou desarcordado por vários minutos. Além disso, sua bola furou e você precisa comprar uma nova.')
+                
+                else:
+                    if thiago.saude < 50 and thiago.dinheiro < 30:
+                        print('Sua saúde não está muito boa para um jogo tão pesado e você não tem nem R$ 30,00 para comer comer com seus amigos após o jogo.')
+                    elif thiago.saude >= 50:
+                        print('Seus amigos querem comer após o jogo. Você não vai sair na aba dos outro, né, seu muquirana!?')
+                    else:
+                        print('Sua saúde está péssima! Procure um médico!')
