@@ -245,16 +245,16 @@ if __name__ == '__main__':
                     print('O cano da pia estorou, você terá que chamar um encanador para consertar.')
 
                     if thiago.dinheiro > 70:
-                        thiago.seila(saude=-1, estresse=5, dinheiro=-70)
+                        thiago.atribuirValores(saude=-1, estresse=5, dinheiro=-70)
                         print('O encandor consertou o cano e custou R$70 e você ficou um pouco estressado.')
 
                     else:
                         print('Você não tem dinheiro suficiente para consertar a pia.')
-                        thiago.seila(saude=-1, estresse=10)
+                        thiago.atribuirValores(saude=-1, estresse=10)
 
                 else:
                     print('Cozinha limpa!')
-                    thiago.seila(saude=-1)
+                    thiago.atribuirValores(saude=-1)
 
             elif casa == 2:
                 print('LIMPANDO O BANHEIRO...')
@@ -263,12 +263,12 @@ if __name__ == '__main__':
 
                 if opcao != 3:
                     print('Enquanto você limpava a privada sua aliança escorregou e caiu do seu dedo.')
-                    thiago.seila(saude=-1, relacionamento=-5, estresse=5)
+                    thiago.atribuirValores(saude=-1, relacionamento=-5, estresse=5)
                     print('Sua mulher ficou chateada e você perdeu pontos de relacionamento.')
 
                 else:
                     print('Banheiro limpo!')
-                    thiago.seila(saude=-1)
+                    thiago.atribuirValores(saude=-1)
             elif casa == 3:
                 print('LIMPANDO O QUARTO...')
                 sleep(2)
@@ -278,11 +278,11 @@ if __name__ == '__main__':
                     print(
                         'A Lâmpada do seu quarto queimou, você foi trocar mas caiu do banco e fraturou o braço e teve que ir ao hospital.')
                     relogio.avancaTempo(4, 30)
-                    thiago.seila(saude=-20, estresse=10)
+                    thiago.atribuirValores(saude=-20, estresse=10)
 
                 else:
                     print('Quarto limpo!')
-                    thiago.seila(saude=-1)
+                    thiago.atribuirValores(saude=-1)
 
             elif casa == 4:
                 print('LIMPANDO A SALA...')
@@ -291,14 +291,14 @@ if __name__ == '__main__':
 
                 if opcao != 3:
                     print('Enquanto arrumava a sala você encontrou sua calça que estava com R$50 no bolso!')
-                    thiago.seila(saude=-1, dinheiro=50)
+                    thiago.atribuirValores(saude=-1, dinheiro=50)
                     print('LIMPANDO A SALA...')
                     sleep(2)
                     print('A sala está limpa!')
 
                 else:
                     print('Sala limpa!')
-                    thiago.seila(saude=-1)
+                    thiago.atribuirValores(saude=-1)
 
             else:
                 print('TIRANDO O LIXO...')
@@ -309,11 +309,11 @@ if __name__ == '__main__':
                     relogio.avancaTempo(2, 30)
                     print(
                         'Enquanto você tirava o lixo, um cachorro foi na sua direção e rasgou o saco de lixo e te mordeu.\nVocê vc terá que ir ao médico.')
-                    thiago.seila(saude=-10, estresse=10)
+                    thiago.atribuirValores(saude=-10, estresse=10)
 
                 else:
                     print('Lixo no lixo! ;)')
-                    thiago.seila(saude=-1)
+                    thiago.atribuirValores(saude=-1)
         #inicio eduardo
         elif escolha == 5:
             projetospessoais = int(input('''\nEscolha uma das opções de projeto pessoal:
