@@ -13,12 +13,12 @@ if __name__ == '__main__':
         opcao = randint(1, 4)
 
         escolha = int(input('''Escolha uma opção:
-        [ 1 ] Lazer
-        [ 2 ] Trabalho
-        [ 3 ] Estudo
-        [ 4 ] Cuidar da casa
-        [ 5 ] Projetos pessoais\n
-        O que você quer fazer? '''))
+    [ 1 ] Lazer
+    [ 2 ] Trabalho
+    [ 3 ] Estudo
+    [ 4 ] Cuidar da casa
+    [ 5 ] Projetos pessoais\n
+    O que você quer fazer? '''))
 
         if escolha == 1:
             lazer = int(input('''\nEscolha uma das opções de lazer:
