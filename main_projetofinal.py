@@ -1,3 +1,4 @@
+from random import randint
 from personagem_projetofinal import Personagem
 from relogio_projetofinal import Relogio
 
@@ -7,6 +8,7 @@ thiago = Personagem()
 if __name__ == '__main__':
 
     while True:
+        opcao = randint(1,2)
         escolha = int(input('''
 Escolha uma opção:
 [ 1 ] Lazer
@@ -50,49 +52,73 @@ Escolha uma das opções de trabalho:
 O que você quer fazer? '''))
 
             if trabalho == 1:
-                if thiago.saude > 70:
-                    relogio.avancaTempo(8)
-                    thiago.trabalhar()
-                    print("A aula foi realizada com sucesso!")
+                if 8 < relogio.horas < 16:
+                    if opcao == 1:
+                        relogio.avancaTempo(8)
+                        thiago.atribuirValores(saude=-10,estresse=10,dinheiro=20)
+                        print("A aula foi realizada com sucesso!")
+                    else:
+                        relogio.avancaTempo(8)
+                        thiago.atribuirValores(saude=-30, estresse=30, dinheiro=20)
+                        print("A aula foi um desastre! Houve uma briga entre os alunos que resultou em um grade desconforto na sala. ")
                 else:
-                    print('Você está sem energia para dar aula!')
+                    print('Você está fora do horário de aula!')
                     continue
 
             elif trabalho == 2:
                 if thiago.saude > 50:
-                    relogio.avancaTempo(4)
-                    thiago.hora_extra()
-                    print("Os conteúdos das aulas estão prontos.")
+                    if opcao == 1:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10,estresse=10,dinheiro=10)
+                        print("Os conteúdos das aulas estão prontos.")
+                    else:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-20, estresse=30, dinheiro=10)
+                        print("Você errou o material da aula e preparou tudo errado!!! Vai ter que refazer.")
                 else:
                     print('Você está exausto demais para preparar o conteúdo da aula. ')
                     continue
 
             elif trabalho == 3:
                 if thiago.saude > 50:
-                    relogio.avancaTempo(4)
-                    thiago.hora_extra()
-                    print("Os exercícios foram corrigidos e os feedbacks foram enviados.")
+                    if opcao == 1:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10,estresse=30,dinheiro=10)
+                        print("Os trabalhos foram corrigidos e os feedbacks foram todos enviados com sucesso.")
+                    else:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10, estresse=50, dinheiro=-80)
+                        print("Devido a uma chuva forte, seu computador queimou! Sem correção, sem feedbacks e sem computador.")
                 else:
                     print('Você está muito cansado para corrigir as atividades. ')
                     continue
 
             elif trabalho == 4:
                 if thiago.saude > 50:
-                    relogio.avancaTempo(4)
-                    thiago.hora_extra()
-                    print("A aula foi 10!!")
+                    if opcao == 1:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10,estresse=10,dinheiro=10)
+                        print("A lista de exercícios está pronta e atualizada!")
+                    else:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10, estresse=30, dinheiro=10)
+                        print("Você trocou as matérias das turmas e fez listas erradas para cada turma! Agora é refazer.")
                 else:
                     print('Você precisa descansar antes de poder mexer com a lista de exercícios.')
                     continue
 
             elif trabalho == 5:
-                if thiago.saude > 70:
-                    relogio.avancaTempo(4)
-                    thiago.trabalhar()
-                    thiago.dormir()
-                    print("A aula foi realizada com sucesso!")
+                if 18 < relogio.horas < 23:
+                    if opcao == 1:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-10,estresse=10,dinheiro=20)
+                        print("A aula foi realizada com sucesso!")
+                    else:
+                        relogio.avancaTempo(4)
+                        thiago.atribuirValores(saude=-20,estresse=30, dinheiro=20)
+                        print("A aula foi péssima. Conteúdo maçante, alunos desinteressados eninguém aprendeu nada.")
                 else:
-                    print('Você está sem energia para dar aula!')
+                    print('Você está fora do horário de aula!')
                     continue
         print()
         print(relogio)

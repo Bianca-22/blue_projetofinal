@@ -1,7 +1,7 @@
 class Relogio:
     def __init__(self):
         self.__dia = 1
-        self.__horas = 0
+        self.__horas = 7
         self.__minutos = 0
 
     @property
@@ -24,9 +24,9 @@ class Relogio:
     def avancaTempo(self, horas=0, minutos=0):
         self.__horas += horas
         self.__minutos += minutos
-        if self.__minutos >= 60:
-            self.__minutos = 0
+        while self.__minutos >= 60:
+            self.__minutos -= 60
             self.__horas += 1
-        if self.__horas >= 24:
-            self.__horas = 0
+        while self.__horas >= 24:
+            self.__horas -= 24
             self.__dia += 1
