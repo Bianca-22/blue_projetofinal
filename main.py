@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     while True:
 
-        opcao = randint(1,2)
+        opcao = randint(1,4)
 
         escolha = int(input('''Escolha uma opção:
         [ 1 ] Lazer
@@ -31,7 +31,7 @@ if __name__ == '__main__':
             if projetospessoais == 1:
 
                 if thiago.saude > 10: #mudanças nos atributos a serem discutidas depois
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1,1)
                         thiago.atribuirValores(estresse = -10, xp = 10)
                         print('Você fez o roteiro e a gravação para o vídeo em tempo recorde, fluiu muito bem.')
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             elif projetospessoais == 2:
 
                 if thiago.relacionamento > 30:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1,1)
                         thiago.atribuirValores(estresse = -10, relacionamento = -10, xp = 10)
                         print('O post que você fez sobre suas extensões no VSCode alcançou um público grande e gerou vários comentários.')
@@ -64,7 +64,7 @@ if __name__ == '__main__':
             elif projetospessoais == 3:
 
                 if thiago.dinheiro > 20:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1, 1)
                         thiago.atribuirValores(saude = 30, relacionamento = -20, estresse = 5, dinheiro = -20)
                         print('Você gostou tanto do exercício que está até pensando em disputar um concurso de fisiculturismo ano que vem. Entretanto, sua esposa não gosta de homens musculosos.')
@@ -81,7 +81,7 @@ if __name__ == '__main__':
             elif projetospessoais == 4:
 
                 if thiago.saude >= 20 and thiago.dinheiro >= 50 :
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1,1)
                         thiago.atribuirValores(relacionamento = 10, estresse = 10, xp = 10, dinheiro = -5)
                         print('O projeto está a todo vapor e alguns possíveis parceiros já entraram em contato com você.')
@@ -107,7 +107,7 @@ if __name__ == '__main__':
             elif projetospessoais == 5:
 
                 if thiago.dinheiro > 200:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1,1)
                         thiago.atribuirValores(dinheiro = 100, estresse = 40)
                         print('Seus investimentos no Tesouro Direto e na Bolsa de Valores estão ficando mais sólidos daqui a alguns anos você talvez consiga viver só de renda passiva. Entretanto seus ganhos são proporcionais ao tempo que você tem para administrar os investimentos.')
