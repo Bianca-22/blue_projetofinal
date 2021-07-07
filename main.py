@@ -9,7 +9,7 @@ thiago = Personagem()
 if __name__ == '__main__':
 
     while True:
-        ale = randint(1,10)
+        ale = randint(1,7)
         escolha = int(input('''Escolha uma opção:
         [ 1 ] Lazer
         [ 2 ] Trabalho
@@ -79,7 +79,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(1, 0)
               
-                if ale == 10:
+                if ale == 3:
                     print('Enquanto arrumava a sala você encontrou sua calça que estava com R$50 no bolso!')
                     thiago.seila(saude= -1, dinheiro= 50)
                     print('LIMPANDO A SALA...')
