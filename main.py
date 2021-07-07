@@ -9,7 +9,7 @@ thiago = Personagem()
 if __name__ == '__main__':
 
     while True:
-        ale = randint(1,7)
+        opcao = randint(1,4)
         escolha = int(input('''Escolha uma opção:
         [ 1 ] Lazer
         [ 2 ] Trabalho
@@ -32,7 +32,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(1, 20)
                 
-                if ale == 5:
+                if opcao != 3:
                     print('O cano da pia estorou, você terá que chamar um encanador para consertar.')
                     
                     if thiago.dinheiro > 70:
@@ -52,7 +52,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(1, 10)
              
-                if ale == 7:
+                if opcao != 3:
                     print('Enquanto você limpava a privada sua aliança escorregou e caiu do seu dedo.')
                     thiago.seila(saude= -1, relacionamento= -5, estresse= 5)
                     print('Sua mulher ficou chateada e você perdeu pontos de relacionamento.')
@@ -65,7 +65,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(1, 30)
              
-                if ale == 4:
+                if opcao != 3:
                     print('A Lâmpada do seu quarto queimou, você foi trocar mas caiu do banco e fraturou o braço e teve que ir ao hospital.')
                     relogio.avancaTempo(4, 30)
                     thiago.seila(saude= -20, estresse= 10)
@@ -79,7 +79,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(1, 0)
               
-                if ale == 3:
+                if opcao != 3:
                     print('Enquanto arrumava a sala você encontrou sua calça que estava com R$50 no bolso!')
                     thiago.seila(saude= -1, dinheiro= 50)
                     print('LIMPANDO A SALA...')
@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 sleep(2)
                 relogio.avancaTempo(0, 30)
              
-                if ale == 1:
+                if opcao != 3:
                     relogio.avancaTempo(2, 30)
                     print('Enquanto você tirava o lixo, um cachorro foi na sua direção e rasgou o saco de lixo e te mordeu.\nVocê vc terá que ir ao médico.')
                     thiago.seila(saude= -10, estresse= 10)
