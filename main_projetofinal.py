@@ -8,7 +8,8 @@ thiago = Personagem()
 if __name__ == '__main__':
 
     while True:
-        opcao = randint(1,2)
+        opcao = randint(1,4)
+
         escolha = int(input('''
 Escolha uma opção:
 [ 1 ] Lazer
@@ -53,7 +54,7 @@ O que você quer fazer? '''))
 
             if trabalho == 1:
                 if 8 < relogio.horas < 16:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(8)
                         thiago.atribuirValores(saude=-10,estresse=10,dinheiro=20)
                         print("A aula foi realizada com sucesso!")
@@ -67,7 +68,7 @@ O que você quer fazer? '''))
 
             elif trabalho == 2:
                 if thiago.saude > 50:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=-10,estresse=10,dinheiro=10)
                         print("Os conteúdos das aulas estão prontos.")
@@ -81,7 +82,7 @@ O que você quer fazer? '''))
 
             elif trabalho == 3:
                 if thiago.saude > 50:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=-10,estresse=30,dinheiro=10)
                         print("Os trabalhos foram corrigidos e os feedbacks foram todos enviados com sucesso.")
@@ -95,7 +96,7 @@ O que você quer fazer? '''))
 
             elif trabalho == 4:
                 if thiago.saude > 50:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=-10,estresse=10,dinheiro=10)
                         print("A lista de exercícios está pronta e atualizada!")
@@ -109,14 +110,14 @@ O que você quer fazer? '''))
 
             elif trabalho == 5:
                 if 18 < relogio.horas < 23:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=-10,estresse=10,dinheiro=20)
                         print("A aula foi realizada com sucesso!")
                     else:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=-20,estresse=30, dinheiro=20)
-                        print("A aula foi péssima. Conteúdo maçante, alunos desinteressados eninguém aprendeu nada.")
+                        print("A aula foi péssima. Conteúdo maçante, alunos desinteressados e ninguém aprendeu nada.")
                 else:
                     print('Você está fora do horário de aula!')
                     continue
