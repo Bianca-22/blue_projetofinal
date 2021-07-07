@@ -99,6 +99,10 @@ if __name__ == '__main__':
                     elif thiago.dinheiro < 50:
                         print('Você tem outras prioridades no momento, talvez devesse começar vendo sua reserva de dinheiro.')
                         continue
+                    
+                    elif thiago.saude < 20 and thiago.dinheiro <50:
+                        print('Muito legal da sua parte em pensar nesse projeto, mas o ideal é que primeiro tente ajeitar um pouco a sua própria vida. ')
+                        continue
 
             elif projetospessoais == 5:
 
