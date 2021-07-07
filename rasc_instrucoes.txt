@@ -1,0 +1,17 @@
+Bem vindo ao jogo Lima's Simulator!
+
+Neste jogo você tem a experiência de simular o dia a dia do professor Thiago Lima em cinco grandes áreas de sua vida:
+
+	Lazer: opções referentes à descanso e passatempos
+	Trabalho: opções referentes à parte técnica da vida de programador/professor
+	Estudo: 
+	Cuidar da casa: opções referentes à vida doméstica
+	Projetos pessoais: opções referentes à objetivos e projetos paralelos
+
+Dentro de cada uma dessas grandes áreas você pode escolher dentre cinco possibilidades onde cada uma delas executa uma ação respectiva àquela opção, alterando assim os atributos de seu personagem:
+
+	Saúde:
+	Relacionamento:
+	Dinheiro:
+	Estresse:
+	Experiência:
