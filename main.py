@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     while True:
 
-        opcao = randint(1,2)
+        opcao = randint(1, 4)
 
         escolha = int(input('''Escolha uma opção:
         [ 1 ] Lazer
@@ -31,7 +31,7 @@ if __name__ == '__main__':
             if lazer == 1:
 
                 if thiago.estresse <= 50:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(8)
                         thiago.atribuirValores(saude = 20, estresse = -30)
                         print('Você teve uma revigorante noite de sono!')
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             elif lazer == 2:
 
                 if thiago.xp >= 30 and thiago.dinheiro >= 20:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(1, 30)
                         thiago.atribuirValores(saude = 10, estresse = -20, relacionamento = 20, dinheiro = -20)
                         print('Você foi caminhar no Parque com a sua esposa e tomou um sorvete com ela! Os dois ficaram muito felizes!')
@@ -71,7 +71,7 @@ if __name__ == '__main__':
             elif lazer == 3:
 
                 if 21 <= relogio.horas < 24:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(2, 5)
                         thiago.atribuirValores(relacionamento = 20, estresse = -10)
                         print('Você e sua esposa escolheram um filme ótimo e se divertiram muito juntos!')
@@ -88,7 +88,7 @@ if __name__ == '__main__':
             elif lazer == 4:
 
                 if thiago.dinheiro >= 150 and 20 <= relogio.horas < 23:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(relacionamento = 100, dinheiro = -150, estresse = -40)
                         print('Você preparou um lindo jantar à luz de velas para a sua esposa e ela ficou muito muito feliz. O relacionamento agora está renovado!')
@@ -110,7 +110,7 @@ if __name__ == '__main__':
             elif lazer == 5:
                 
                 if thiago.saude >= 50 and thiago.dinheiro >= 30:
-                    if opcao == 1:
+                    if opcao != 3:
                         relogio.avancaTempo(2, 30)
                         thiago.atribuirValores(saude = 30, dinheiro = -30, estresse = -50)
                         print('Você se divertiu muito jogando vôlei com os seu amigos! Ao final do jogo você foi comer com eles e gastou R$ 30,00. Foi uma ótimo momento!')
