@@ -18,7 +18,7 @@ if __name__ == '__main__':
         [ 5 ] Projetos pessoais\n
         O que você quer fazer? '''))
         
-        if escolha == 4:
+        elif escolha == 4:
             casa =  int(input('''Escolha uma opção:
             [ 1 ] Limpar a cozinha
             [ 2 ] Limpar o banheiro
