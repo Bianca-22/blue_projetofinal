@@ -17,9 +17,11 @@ class Relogio:
         return self.__minutos
     
     def __str__(self):
-        semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
-        diaSemana = semana[self.__dia % 7]
-        return f'{self.__horas:02d}:{self.__minutos:02d}\n{diaSemana}'
+        horario = f'{self.__horas:02d}:{self.__minutos:02d}'
+        return f'''
+        {"Agora são:":>15}
+        {horario:>14},
+        {self.diaDaSemana():>15}'''
     
     def avancaTempo(self, horas = 0, minutos = 0):
         self.__horas += horas
@@ -30,3 +32,8 @@ class Relogio:
         while self.__horas >= 24:
             self.__horas -= 24
             self.__dia += 1
+    
+    def diaDaSemana(self):
+        semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+        diaSemana = semana[self.__dia % 7]
+        return diaSemana
