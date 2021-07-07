@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 class Personagem:
     def __init__(self, nome='Thiago'):
         self.__nome = nome
@@ -32,8 +34,15 @@ class Personagem:
         return self.__xp
     
     def __str__(self):
-        return f'Saúde: {self.__saude}\nRelacionamento: {self.__relacionamento}\nDinheiro: {self.__dinheiro}\nEstresse: {self.__estresse}\n Experiência: {self.__xp}'
-
+        tabelaStatusHora = [
+            ['Saúde:', self.__saude],
+            ['Relacionamento:', self.__relacionamento],
+            ['Dinheiro:', f'R$ {self.__dinheiro:.2f}'],
+            ['Estresse', self.__estresse],
+            ['Experiência', self.__xp]]
+            
+        return tabulate(tabelaStatusHora, tablefmt='plain')
+        
     def _avaliar(self, valor):
         if valor > 100:
             return 100
