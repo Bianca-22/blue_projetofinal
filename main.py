@@ -19,7 +19,7 @@ if __name__ == '__main__':
         [ 5 ] Projetos pessoais\n
         O que você quer fazer? '''))
 
-        if escolha == 5:
+        elif escolha == 5:
             projetospessoais = int(input('''\nEscolha uma das opções de projeto pessoal:
             [ 1 ] Produzir vídeo para o canal do Youtube Thi Code
             [ 2 ] Produzir conteúdo para o Instagram @thi.code
