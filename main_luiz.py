@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 print('Você está estressado demais para assimilar o que irá estudar. Tente descansar para depois voltar aos etudos.')
                 continue
 
-                elif estudo == 2:
+        elif estudo == 2:
 
             if estudo == 1:
                 if thiago.estresse >= 50:
