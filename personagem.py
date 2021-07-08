@@ -1,5 +1,6 @@
 from tabulate import tabulate
 
+# inicia a classe Personagem atribuindo valores iniciais aos atributos.
 class Personagem:
     def __init__(self, nome='Thiago'):
         self.__nome = nome
@@ -9,6 +10,7 @@ class Personagem:
         self.__estresse = 0
         self.__xp = 0
 
+    # os decoradores são utilizados para acessar os atributos privados.
     @property
     def nome(self):
         return self.__nome
@@ -33,6 +35,8 @@ class Personagem:
     def xp(self):
         return self.__xp
     
+     # o magic_method 'str' é utilizado para imprimir o status do jogador.
+     # junto, foi utilizado a biblioteca tabulate para a formatação do status.
     def __str__(self):
         tabelaStatus = [
             ['💊 Saúde:', f'{self.__saude} / 100'],
@@ -43,6 +47,7 @@ class Personagem:
             
         return tabulate(tabelaStatus, tablefmt="rst")
         
+    # função para garantir que os atributos tenham sempre valores entre zero e cem.
     def _avaliar(self, valor):
         if valor > 100:
             return 100
@@ -51,6 +56,7 @@ class Personagem:
         else:
             return valor
 
+    #função única utilizado para alterar os valores dos vários atributos do personagem.
     def atribuirValores(self, saude = 0, relacionamento = 0, dinheiro = 0, estresse = 0, xp = 0):
         self.__saude += saude
         self.__relacionamento += relacionamento
