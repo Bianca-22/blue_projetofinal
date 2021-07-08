@@ -19,9 +19,9 @@ class Relogio:
     def __str__(self):
         horario = f'{self.__horas:02d}:{self.__minutos:02d}'
         return f'''
-        {"Agora são:":>15}
-        {horario:>14},
-        {self.diaDaSemana():>15}'''
+                    {"Agora são:":>19}
+                    {horario:>18},
+                    {self.diaDaSemana():>19}\n'''
     
     def avancaTempo(self, horas = 0, minutos = 0):
         self.__horas += horas
