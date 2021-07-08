@@ -30,22 +30,18 @@ if __name__ == '__main__':
 
             if estudo == 1:
 
-                if thiago.xp >= 50:
-                    
-                    if opcao != 3:
-                        relogio.avancaTempo(8)
-                        thiago.atribuirValores(saude=20, estresse=-30, relacionamento=20, xp=10)
-                        print('Paranbens! Você conseguiu assimilar boa parte do que foi ensinado!')
-
-                    else:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=-30, relacionamento=-20, xp=-10)
-                        print('Puxa vida! Acabou a energia não vou conseguir assisitir a aula nem estudar!')
+                                
+                if opcao != 3:
+                    relogio.avancaTempo(8)
+                    thiago.atribuirValores(saude=20, estresse=-30, relacionamento=20, xp=10)
+                    print('Paranbens! Você conseguiu assimilar boa parte do que foi ensinado!')
 
                 else:
-                    print('Continue estudando para somar cada vez mais conhecimento!')
-                    continue
+                    relogio.avancaTempo(4)
+                    thiago.atribuirValores(saude=-10, estresse=-30, relacionamento=0, xp=0)
+                    print('Puxa vida! Acabou a energia não vou conseguir assisitir a aula nem estudar!')
 
+                
             elif estudo == 2:
 
                 if thiago.xp >= 20:
@@ -57,8 +53,8 @@ if __name__ == '__main__':
 
                     else:
                         relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=+30, relacionamento=-20, xp=-10)
-                        print('Meu cachorro mastigou o cabo do meu monitor, não vou conseguir acompanhar a aula!')
+                        thiago.atribuirValores(saude=-10, estresse=+30, relacionamento=-20, xp=0)
+                        print('Meu cachorro mastigou o cabo do meu monitor, não vou conseguir acompanhar a aula! Minha esposa ficou brava por que deixei o cachorro para fora da casa!')
 
                 else:
                     print('Continue estudando para somar cada vez mais conhecimento!')
