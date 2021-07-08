@@ -34,14 +34,14 @@ class Personagem:
         return self.__xp
     
     def __str__(self):
-        tabelaStatusHora = [
-            ['Saúde:', self.__saude],
-            ['Relacionamento:', self.__relacionamento],
-            ['Dinheiro:', f'R$ {self.__dinheiro:.2f}'],
-            ['Estresse', self.__estresse],
-            ['Experiência', self.__xp]]
+        tabelaStatus = [
+            ['💊 Saúde:', f'{self.__saude} / 100'],
+            ['💑 Relacionamento:', f'{self.__relacionamento} / 100'],
+            ['💸 Dinheiro:', f'R$ {self.__dinheiro:.2f}'],
+            ['🤯 Estresse', f'{self.__estresse} / 100'],
+            ['🤩 Experiência', self.__xp]]
             
-        return tabulate(tabelaStatusHora, tablefmt='plain')
+        return tabulate(tabelaStatus, tablefmt="rst")
         
     def _avaliar(self, valor):
         if valor > 100:
@@ -59,6 +59,4 @@ class Personagem:
         self.__xp += xp
         self.__saude = self._avaliar(self.__saude)
         self.__relacionamento = self._avaliar(self.__relacionamento)
-        self.__dinheiro = self._avaliar(self.__dinheiro)
         self.__estresse = self._avaliar(self.__estresse)
-        self.__xp = self._avaliar(self.__xp)
