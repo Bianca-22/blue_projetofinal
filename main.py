@@ -3,6 +3,7 @@ from relogio import Relogio
 from funcoes import *
 from random import randint
 from time import sleep
+from rich import print
 
 relogio = Relogio()
 thiago = Personagem()
@@ -12,9 +13,13 @@ if __name__ == '__main__':
     while True:
     
         limpar()
-
+        cabecalho()
+        thiagoImg()
+        avancar()
+        limpar()
+        
         print(relogio)
-        print(f'{"SEUS STATUS AGORA SÃO:":^26}')
+        print(f'[bold dodger_blue1]{"SEUS STATUS AGORA SÃO:":^28}[/bold dodger_blue1]')
         print(thiago)
 
         if thiago.saude == 0:
@@ -26,24 +31,24 @@ if __name__ == '__main__':
 
         opcao = randint(1, 4)
         # print(relogio)
-        escolha = int(input('''\n\nEscolha uma opção:\n
+        print('''\n\n[italic dark_cyan]Escolha uma das áreas da vida:[/italic dark_cyan]\n
     [ 1 ] Lazer
     [ 2 ] Trabalho
     [ 3 ] Estudo
     [ 4 ] Cuidar da casa
-    [ 5 ] Projetos pessoais\n
-    O que você quer fazer? '''))
+    [ 5 ] Projetos pessoais\n''')
+        escolha = int(input('O que você quer fazer? '))
 
         limpar()
         print(relogio)
-        if escolha == 1:
-            lazer = int(input('''Escolha uma das opções de lazer:\n
+        print('''[italic dark_cyan]Escolha uma das opções de lazer:[/italic dark_cyan]\n
         [ 1 ] Dormir
         [ 2 ] Caminhar no Parque
         [ 3 ] Assistir HBO Max
         [ 4 ] Jantar Romântico
-        [ 5 ] Jogar vôlei\n
-        O que você quer fazer? '''))
+        [ 5 ] Jogar vôlei\n''')
+        if escolha == 1:
+            lazer = int(input('O que você quer fazer? '))
             
             #inicio felipe
             if lazer == 1:
@@ -157,13 +162,13 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
         
         #inicio nikolas
         elif escolha == 2:
-            trabalho = int(input('''Escolha uma das opções de trabalho:\n
+            print('''[italic dark_cyan]Escolha uma das opções de trabalho:[/italic dark_cyan]\n
         [ 1 ] Dar aula no Generation Brasil.
         [ 2 ] Preparar o conteúdo das aulas.
         [ 3 ] Corrigir e dar feedback nos trabalhos entregues.
         [ 4 ] Preparar lista de exercícios.
-        [ 5 ] Dar aula no Blue EdTech.\n
-        O que você quer fazer? '''))
+        [ 5 ] Dar aula no Blue EdTech.\n''')
+            trabalho = int(input('O que você quer fazer? '))
         
             if trabalho == 1:
                 if 8 < relogio.horas < 16:
@@ -263,13 +268,13 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
         #elif escolha == 3:
         #inicio bia
         elif escolha == 4:
-            casa = int(input('''Escolha uma opção:\n
+            print('''[italic dark_cyan]Escolha uma opção de cuidar da casa:[/italic dark_cyan]\n
         [ 1 ] Limpar a cozinha
         [ 2 ] Limpar o banheiro
         [ 3 ] Limpar o quarto
         [ 4 ] Limpar a sala
-        [ 5 ] Tirar o Lixo\n
-        O que você quer fazer? '''))
+        [ 5 ] Tirar o Lixo\n''')
+            casa = int(input('O que você quer fazer? '))
             
             if casa == 1:
                 print('\n\nLIMPANDO A COZINHA...')
@@ -349,13 +354,13 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                     
         #inicio eduardo
         elif escolha == 5:
-            projetospessoais = int(input('''Escolha uma das opções de projeto pessoal:\n
+            print('''[italic dark_cyan]Escolha uma das opções de projeto pessoal:[/italic dark_cyan]\n
         [ 1 ] Produzir vídeo para o canal do Youtube Thi Code
         [ 2 ] Produzir conteúdo para o Instagram @thi.code
         [ 3 ] Ir para a academia para ficar monstro
         [ 4 ] Desenvolver mais um pouco o rascunho do seu projeto social de ensino gratuito de programação para jovens
-        [ 5 ] Independência financeira\n
-        O que você quer fazer? '''))
+        [ 5 ] Independência financeira\n''')
+            projetospessoais = int(input('O que você quer fazer? '))
             
             if projetospessoais == 1:
                 if thiago.saude > 10:  # mudanças nos atributos a serem discutidas depois

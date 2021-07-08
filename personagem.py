@@ -35,11 +35,11 @@ class Personagem:
     
     def __str__(self):
         tabelaStatus = [
-            ['Saúde:', f'{self.__saude} / 100'],
-            ['Relacionamento:', f'{self.__relacionamento} / 100'],
-            ['Dinheiro:', f'R$ {self.__dinheiro:.2f}'],
-            ['Estresse', f'{self.__estresse} / 100'],
-            ['Experiência', self.__xp]]
+            ['💊 Saúde:', f'{self.__saude} / 100'],
+            ['💑 Relacionamento:', f'{self.__relacionamento} / 100'],
+            ['💸 Dinheiro:', f'R$ {self.__dinheiro:.2f}'],
+            ['🤯 Estresse', f'{self.__estresse} / 100'],
+            ['🤩 Experiência', self.__xp]]
             
         return tabulate(tabelaStatus, tablefmt="rst")
         
