@@ -19,14 +19,13 @@ if __name__ == '__main__':
         [ 5 ] Projetos pessoais\n
         O que você quer fazer? '''))
         
-        print('''\n\n[italic dark_cyan]Escolha  uma das opções de estudo:[/italic dark_cyan]\n
-        [1] HTML
-        [2] PYTHON
-        [3] JAVA SCRIPT
-        [4] C
-        [5] PHP\n''')
-
         if escolha == 3:
+            print('''\n\n[italic dark_cyan]Escolha  uma das opções de estudo:[/italic dark_cyan]\n
+            [1] HTML
+            [2] PYTHON
+            [3] JAVA SCRIPT
+            [4] C
+            [5] PHP\n''')
             estudo = int(input(' O que você quer fazer? '''))
 
             if estudo == 1:
