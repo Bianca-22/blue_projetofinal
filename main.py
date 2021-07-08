@@ -1,5 +1,6 @@
 from personagem import Personagem
 from relogio import Relogio
+from funcoes import *
 from random import randint
 from time import sleep
 
@@ -9,10 +10,12 @@ thiago = Personagem()
 if __name__ == '__main__':
 
     while True:
+    
+        limpar()
 
         opcao = randint(1, 4)
-
-        escolha = int(input('''Escolha uma opção:
+        print(relogio)
+        escolha = int(input('''Escolha uma opção:\n
     [ 1 ] Lazer
     [ 2 ] Trabalho
     [ 3 ] Estudo
@@ -20,15 +23,17 @@ if __name__ == '__main__':
     [ 5 ] Projetos pessoais\n
     O que você quer fazer? '''))
 
+        limpar()
+        print(relogio)
         if escolha == 1:
-            lazer = int(input('''\nEscolha uma das opções de lazer:
+            lazer = int(input('''Escolha uma das opções de lazer:\n
         [ 1 ] Dormir
         [ 2 ] Caminhar no Parque
         [ 3 ] Assistir HBO Max
         [ 4 ] Jantar Romântico
         [ 5 ] Jogar vôlei\n
         O que você quer fazer? '''))
-
+            print()
             #inicio felipe
             if lazer == 1:
 
@@ -42,9 +47,9 @@ if __name__ == '__main__':
                         relogio.avancaTempo(4)
                         thiago.atribuirValores(saude=5, estresse=10)
                         print('Os gatos estavam brigando no telhado, o que te fez perder o sono e ficar mais estressado que antes.')
-
                 else:
                     print('Você está estressado demais e não consegue dormir. Faça algo para te desestressar antes de tentar dormir.')
+                    avancar()
                     continue
 
             elif lazer == 2:
@@ -68,6 +73,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print('Sua carreira está estagnada, você precisa ganhar um pouco de experiência antes de pensar pensar em sair.')
                     else:
                         print('Você não tem nem R$20,00 na carteira para sair com a sua esposa. Vá trabalhar!')
+                    avancar()
                     continue
 
             elif lazer == 3:
@@ -85,6 +91,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
 
                 else:
                     print(f'Ainda são {relogio.horas:02d}:{relogio.minutos:02d}. Está muito cedo para assistir filme.')
+                    avancar()
                     continue
 
             elif lazer == 4:
@@ -107,6 +114,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print(f'Acalma o coração. Agora são {relogio.horas:02d}:{relogio.minutos:02d}, não está na hora de jantar.')
                     else:
                         print(f'Como você quer preparar um jantar com apenas R${thiago.dinheiro:.2f}? Vá trabalhar!')
+                    avancar()
                     continue
 
             elif lazer == 5:
@@ -129,17 +137,19 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print('Seus amigos querem comer após o jogo. Você não vai sair na aba dos outro, né, seu muquirana!?')
                     else:
                         print('Sua saúde está péssima! Procure um médico!')
+                    avancar()
+                    continue
         
         #inicio nikolas
         elif escolha == 2:
-            trabalho = int(input('''\nEscolha uma das opções de trabalho:
+            trabalho = int(input('''Escolha uma das opções de trabalho:\n
         [ 1 ] Dar aula no Generation Brasil.
         [ 2 ] Preparar o conteúdo das aulas.
         [ 3 ] Corrigir e dar feedback nos trabalhos entregues.
         [ 4 ] Preparar lista de exercícios.
         [ 5 ] Dar aula no Blue EdTech.\n
         O que você quer fazer? '''))
-
+            print()
             if trabalho == 1:
                 if 8 < relogio.horas < 16:
                     if opcao != 3:
@@ -152,6 +162,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print("A aula foi um desastre! Houve uma briga entre os alunos que resultou em um grade desconforto na sala.")
                 else:
                     print('Você está fora do horário de aula!')
+                    avancar()
                     continue
 
             elif trabalho == 2:
@@ -166,6 +177,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print("Você errou o material da aula e preparou tudo errado!!! Vai ter que refazer.")
                 else:
                     print('Você está exausto demais para preparar o conteúdo da aula. ')
+                    avancar()
                     continue
 
             elif trabalho == 3:
@@ -180,6 +192,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print("Devido a uma chuva forte, seu computador queimou! Sem correção, sem feedbacks e sem computador.")
                 else:
                     print('Você está muito cansado para corrigir as atividades. ')
+                    avancar()
                     continue
 
             elif trabalho == 4:
@@ -194,6 +207,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print("Você trocou as matérias das turmas e fez listas erradas para cada turma! Agora é refazer.")
                 else:
                     print('Você precisa descansar antes de poder mexer com a lista de exercícios.')
+                    avancar()
                     continue
 
             elif trabalho == 5:
@@ -208,19 +222,20 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print("A aula foi péssima. Conteúdo maçante, alunos desinteressados e ninguém aprendeu nada.")
                 else:
                     print('Você está fora do horário de aula!')
+                    avancar()
                     continue
                     
         #elif escolha == 3:
         #inicio bia
         elif escolha == 4:
-            casa = int(input('''\nEscolha uma opção:
+            casa = int(input('''Escolha uma opção:\n
         [ 1 ] Limpar a cozinha
         [ 2 ] Limpar o banheiro
         [ 3 ] Limpar o quarto
         [ 4 ] Limpar a sala
         [ 5 ] Tirar o Lixo\n
         O que você quer fazer? '''))
-
+            print()
             if casa == 1:
                 print('LIMPANDO A COZINHA...')
                 sleep(2)
@@ -301,14 +316,14 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                     
         #inicio eduardo
         elif escolha == 5:
-            projetospessoais = int(input('''\nEscolha uma das opções de projeto pessoal:
+            projetospessoais = int(input('''Escolha uma das opções de projeto pessoal:\n
         [ 1 ] Produzir vídeo para o canal do Youtube Thi Code
         [ 2 ] Produzir conteúdo para o Instagram @thi.code
         [ 3 ] Ir para a academia para ficar monstro
         [ 4 ] Desenvolver mais um pouco o rascunho do seu projeto social de ensino gratuito de programação para jovens
         [ 5 ] Independência financeira\n
         O que você quer fazer? '''))
-
+            print()
             if projetospessoais == 1:
 
                 if thiago.saude > 10:  # mudanças nos atributos a serem discutidas depois
@@ -324,6 +339,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
 
                 else:
                     print('Você não está saudável e também sem cabeça para se dedicar a escrever roteiro e gravar o vídeo agora.')
+                    avancar()
                     continue
 
             elif projetospessoais == 2:
@@ -341,6 +357,8 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
 
                 else:
                     print('Sua esposa não está satisfeita em como você a está tratando e o proibiu de usar o Instagram. Dê um pouco mais de atenção a ela. Cuide antes de perder.')
+                    avancar()
+                    continue
 
             elif projetospessoais == 3:
 
@@ -357,6 +375,7 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
 
                 else:
                     print('Você não tem dinheiro suficiente para ir a academia.')
+                    avancar()
                     continue
 
             elif projetospessoais == 4:
@@ -375,15 +394,14 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                 else:
                     if thiago.saude < 20:
                         print('Você não está saudável o suficiente para se dedicar a esta ação.')
-                        continue
 
                     elif thiago.dinheiro < 50:
                         print('Você tem outras prioridades no momento, talvez devesse começar vendo sua reserva de dinheiro.')
-                        continue
 
                     elif thiago.saude < 20 and thiago.dinheiro < 50:
                         print('Muito legal da sua parte em pensar nesse projeto, mas o ideal é que primeiro tente ajeitar um pouco a sua própria vida. ')
-                        continue
+                    avancar()
+                    continue
 
             elif projetospessoais == 5:
 
@@ -399,12 +417,18 @@ Você deixou deixou sua esposa para trás, por isso ela ficou muito estressada c
                         print('Aplicaram um golpe em você e na verdade seu investimento foi para um esquema de pirâmide. Isso afetou bastante o ambiente na sua casa.')
                 else:
                     print('Antes de pensar em investir, pense em como não perder dinheiro.')
+                    avancar()
+                    continue
+        
+        avancar()           
+        limpar()
 
-        print()
         print(relogio)
+        print('SEUS STATUS AGORA SÃO:\n')
         print(thiago)
-        print()
 
         if thiago.saude == 0:
             print('GAME OVER')
             break
+
+        avancar()
