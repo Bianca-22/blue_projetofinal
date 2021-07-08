@@ -174,109 +174,112 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                     continue
         
         #inicio nikolas
-        elif escolha == 2:
-            print('''[italic dark_cyan]Escolha uma das opções de trabalho:[/italic dark_cyan]\n
-        [ 1 ] Dar aula no Generation Brasil.
-        [ 2 ] Preparar o conteúdo das aulas.
-        [ 3 ] Corrigir e dar feedback nos trabalhos entregues.
-        [ 4 ] Preparar lista de exercícios.
-        [ 5 ] Dar aula no Blue EdTech.\n''')
-            trabalho = int(input('O que você quer fazer? '))
-        
-            if trabalho == 1:
-                if 8 < relogio.horas < 16:
-                    print('\n\nDANDO AULA...')
-                    sleep(2)
-                    if opcao != 3:
-                        relogio.avancaTempo(8)
-                        thiago.atribuirValores(saude=-10, estresse=10, dinheiro=20)
-                        print("\nA aula foi realizada com sucesso!")
-                    else:
-                        relogio.avancaTempo(8)
-                        thiago.atribuirValores(saude=-30, estresse=30, dinheiro=20)
-                        print("\nA aula foi um desastre! Houve uma briga entre os alunos que resultou em um grade desconforto na sala.")
-                    avancar()
-                    continue
-                else:
-                    print('\n\nVocê está fora do horário de aula!')
-                    avancar()
-                    continue
+        if thiago.xp >= 100:
+            elif escolha == 2:
+                print('''[italic dark_cyan]Escolha uma das opções de trabalho:[/italic dark_cyan]\n
+            [ 1 ] Dar aula no Generation Brasil.
+            [ 2 ] Preparar o conteúdo das aulas.
+            [ 3 ] Corrigir e dar feedback nos trabalhos entregues.
+            [ 4 ] Preparar lista de exercícios.
+            [ 5 ] Dar aula no Blue EdTech.\n''')
+                trabalho = int(input('O que você quer fazer? '))
 
-            elif trabalho == 2:
-                if thiago.saude > 50:
-                    print('\n\nPREPARANDO AULA...')
-                    sleep(2)
-                    if opcao != 3:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=10, dinheiro=10)
-                        print("\nOs conteúdos das aulas estão prontos.")
+                if trabalho == 1:
+                    if 8 < relogio.horas < 16:
+                        print('\n\nDANDO AULA...')
+                        sleep(2)
+                        if opcao != 3:
+                            relogio.avancaTempo(8)
+                            thiago.atribuirValores(saude=-10, estresse=10, dinheiro=20)
+                            print("\nA aula foi realizada com sucesso!")
+                        else:
+                            relogio.avancaTempo(8)
+                            thiago.atribuirValores(saude=-30, estresse=30, dinheiro=20)
+                            print("\nA aula foi um desastre! Houve uma briga entre os alunos que resultou em um grade desconforto na sala.")
+                        avancar()
+                        continue
                     else:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-20, estresse=30, dinheiro=10)
-                        print("\nVocê errou o material da aula e preparou tudo errado!!! Vai ter que refazer.")
-                    avancar()
-                    continue
-                else:
-                    print('\n\nVocê está exausto demais para preparar o conteúdo da aula. ')
-                    avancar()
-                    continue
+                        print('\n\nVocê está fora do horário de aula!')
+                        avancar()
+                        continue
 
-            elif trabalho == 3:
-                if thiago.saude > 50:
-                    print('\n\nCORRIGINDO TRABALHOS...')
-                    sleep(2)
-                    if opcao != 3:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=30, dinheiro=10)
-                        print("\nOs trabalhos foram corrigidos e os feedbacks foram todos enviados com sucesso.")
+                elif trabalho == 2:
+                    if thiago.saude > 50:
+                        print('\n\nPREPARANDO AULA...')
+                        sleep(2)
+                        if opcao != 3:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=10, dinheiro=10)
+                            print("\nOs conteúdos das aulas estão prontos.")
+                        else:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-20, estresse=30, dinheiro=10)
+                            print("\nVocê errou o material da aula e preparou tudo errado!!! Vai ter que refazer.")
+                        avancar()
+                        continue
                     else:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=50, dinheiro=-80)
-                        print("\nDevido a uma chuva forte, seu computador queimou! Sem correção, sem feedbacks e sem computador.")
-                    avancar()
-                    continue
-                else:
-                    print('\n\nVocê está muito cansado para corrigir as atividades. ')
-                    avancar()
-                    continue
+                        print('\n\nVocê está exausto demais para preparar o conteúdo da aula. ')
+                        avancar()
+                        continue
 
-            elif trabalho == 4:
-                if thiago.saude > 50:
-                    print('\n\nPREPARANDO LISTA DE EXERCÍCIOS...')
-                    sleep(2)
-                    if opcao != 3:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=10, dinheiro=10)
-                        print("\nA lista de exercícios está pronta e atualizada!")
+                elif trabalho == 3:
+                    if thiago.saude > 50:
+                        print('\n\nCORRIGINDO TRABALHOS...')
+                        sleep(2)
+                        if opcao != 3:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=30, dinheiro=10)
+                            print("\nOs trabalhos foram corrigidos e os feedbacks foram todos enviados com sucesso.")
+                        else:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=50, dinheiro=-80)
+                            print("\nDevido a uma chuva forte, seu computador queimou! Sem correção, sem feedbacks e sem computador.")
+                        avancar()
+                        continue
                     else:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=30, dinheiro=10)
-                        print("\nVocê trocou as matérias das turmas e fez listas erradas para cada turma! Agora é refazer.")
-                    avancar()
-                    continue
-                else:
-                    print('\n\nVocê precisa descansar antes de poder mexer com a lista de exercícios.')
-                    avancar()
-                    continue
+                        print('\n\nVocê está muito cansado para corrigir as atividades. ')
+                        avancar()
+                        continue
 
-            elif trabalho == 5:
-                if 18 < relogio.horas < 23:
-                    print('\n\nDANDO AULA...')
-                    sleep(2)
-                    if opcao != 3:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-10, estresse=10, dinheiro=20)
-                        print("\nA aula foi realizada com sucesso!")
+                elif trabalho == 4:
+                    if thiago.saude > 50:
+                        print('\n\nPREPARANDO LISTA DE EXERCÍCIOS...')
+                        sleep(2)
+                        if opcao != 3:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=10, dinheiro=10)
+                            print("\nA lista de exercícios está pronta e atualizada!")
+                        else:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=30, dinheiro=10)
+                            print("\nVocê trocou as matérias das turmas e fez listas erradas para cada turma! Agora é refazer.")
+                        avancar()
+                        continue
                     else:
-                        relogio.avancaTempo(4)
-                        thiago.atribuirValores(saude=-20, estresse=30, dinheiro=20)
-                        print("\nA aula foi péssima. Conteúdo maçante, alunos desinteressados e ninguém aprendeu nada.")
-                    avancar()
-                    continue
-                else:
-                    print('\n\nVocê está fora do horário de aula!')
-                    avancar()
-                    continue
+                        print('\n\nVocê precisa descansar antes de poder mexer com a lista de exercícios.')
+                        avancar()
+                        continue
+
+                elif trabalho == 5:
+                    if 18 < relogio.horas < 23:
+                        print('\n\nDANDO AULA...')
+                        sleep(2)
+                        if opcao != 3:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-10, estresse=10, dinheiro=20)
+                            print("\nA aula foi realizada com sucesso!")
+                        else:
+                            relogio.avancaTempo(4)
+                            thiago.atribuirValores(saude=-20, estresse=30, dinheiro=20)
+                            print("\nA aula foi péssima. Conteúdo maçante, alunos desinteressados e ninguém aprendeu nada.")
+                        avancar()
+                        continue
+                    else:
+                        print('\n\nVocê está fora do horário de aula!')
+                        avancar()
+                        continue
+        else:
+            print('Você precisa adquirir mais experiência para poder trabalhar.')
                     
         #elif escolha == 3:
         #inicio bia
