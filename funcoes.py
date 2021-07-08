@@ -2,6 +2,12 @@ import os
 from art import text2art
 from rich import print
 
+def leitor():
+    t = 'intro_projetofinal.txt' #alterar o nome do arquivo txt
+    with open(t,encoding = 'utf-8') as file:
+        read = file.read()
+        print(read)
+
 def limpar():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
