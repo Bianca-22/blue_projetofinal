@@ -5,6 +5,7 @@ from random import randint
 from time import sleep
 from rich import print
 
+# criação dos objetos relogio e thiago
 relogio = Relogio()
 thiago = Personagem()
 
@@ -18,11 +19,13 @@ if __name__ == '__main__':
         avancar()
         limpar()
 
+        #formatação para exibição das horas e do status do personagem.
         cabecalho()
         print(relogio)
         print(f'[bold dodger_blue1]{"SEUS STATUS AGORA SÃO:":^28}[/bold dodger_blue1]')
         print(thiago)
 
+        #Condicional para verificar se o critério de gameover é verdadeiro.
         if thiago.saude == 0:
             print('\n\nGAME OVER')
             break
@@ -30,8 +33,11 @@ if __name__ == '__main__':
         # avancar()
         # limpar()
 
+        # variável para definir se vai ou não acontecer a ação aleatória, com probabilidade de 25%.
         opcao = randint(1, 4)
         # print(relogio)
+        
+        # é apresentado 5 opções para o jogador.
         print('''\n\n[italic dark_cyan]Escolha uma das áreas da vida:[/italic dark_cyan]\n
     [ 1 ] Lazer
     [ 2 ] Trabalho
@@ -49,6 +55,11 @@ if __name__ == '__main__':
         [ 3 ] Assistir HBO Max
         [ 4 ] Jantar Romântico
         [ 5 ] Jogar vôlei\n''')
+        
+        # de acordo com as escolhas, são apresentadas mais 5 possibilidades de ação por escolha.
+        # cada ação avalia os atributos dos objetos para permitir ou não que o jogador a execute.
+        # devido a aleatoriedade atribuída à variável 'opcao', há a possibilidade de ocorrer uma ação indesejada.
+        # cada ação modifica o status do jogador e avança no tempo.
         if escolha == 1:
             lazer = int(input('O que você quer fazer? '))
             
