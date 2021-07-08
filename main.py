@@ -17,7 +17,8 @@ if __name__ == '__main__':
         thiagoImg()
         avancar()
         limpar()
-        
+
+        cabecalho()
         print(relogio)
         print(f'[bold dodger_blue1]{"SEUS STATUS AGORA SÃO:":^28}[/bold dodger_blue1]')
         print(thiago)
@@ -40,6 +41,7 @@ if __name__ == '__main__':
         escolha = int(input('O que você quer fazer? '))
 
         limpar()
+        cabecalho()
         print(relogio)
         print('''[italic dark_cyan]Escolha uma das opções de lazer:[/italic dark_cyan]\n
         [ 1 ] Dormir
