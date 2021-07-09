@@ -6,7 +6,7 @@ class Personagem:
         self.__nome = nome
         self.__saude = 100
         self.__relacionamento = 100
-        self.__dinheiro = 150
+        self.__dinheiro = 100
         self.__estresse = 0
         self.__xp = 0
 

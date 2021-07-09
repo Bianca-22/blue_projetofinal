@@ -4,6 +4,8 @@ from funcoes import *
 from random import randint
 from time import sleep
 from rich import print
+from art import text2art
+from math import fabs
 
 # criação dos objetos relogio e thiago
 relogio = Relogio()
@@ -26,10 +28,13 @@ if __name__ == '__main__':
         print(relogio)
         print(f'[bold dodger_blue1]{"SEUS STATUS AGORA SÃO:":^28}[/bold dodger_blue1]')
         print(thiago)
+        sleep(2)
 
         #Condicional para verificar se o critério de gameover é verdadeiro.
         if thiago.saude == 0:
-            print('\n\nGAME OVER')
+            print(f'\n\n[red]{text2art("GAME OVER")}[/red]')
+            sleep(4)
+            limpar()
             break
 
         # variável para definir se vai ou não acontecer a ação aleatória, com probabilidade de 25%.
@@ -41,8 +46,15 @@ if __name__ == '__main__':
     [ 2 ] Trabalho
     [ 3 ] Estudo
     [ 4 ] Cuidar da casa
-    [ 5 ] Projetos pessoais\n''')
+    [ 5 ] Projetos pessoais\n
+    [ 6 ] Sair do Jogo\n''')
         escolha = int(input('O que você quer fazer? '))
+
+        if escolha == 6:
+            print('\n\nObrigado por jogar!')
+            sleep(2)
+            limpar()
+            break
 
         limpar()
         cabecalho()
@@ -68,7 +80,7 @@ if __name__ == '__main__':
                     sleep(2)
                     if opcao != 3:
                         relogio.avancaTempo(6)
-                        thiago.atribuirValores(saude=20, estresse=-30)
+                        thiago.atribuirValores(saude=20, estresse=-50)
                         print('\nVocê teve uma revigorante noite de sono!')
                     else:
                         relogio.avancaTempo(4)
@@ -117,7 +129,7 @@ Ela ficou muito estressada e te colocou para dormir no sofá.''')
                 continue
 
             elif lazer == 4:
-                if thiago.dinheiro >= 150 and 19 <= relogio.horas < 22:
+                if thiago.dinheiro >= 150 and 18 <= relogio.horas < 22:
                     print('\n\nPREPARANDO O JANTAR...')
                     sleep(2)
                     if opcao != 3:
@@ -126,11 +138,11 @@ Ela ficou muito estressada e te colocou para dormir no sofá.''')
                         print('\nVocê preparou um lindo jantar à luz de velas para a sua esposa e ela ficou muito muito feliz. O relacionamento agora está renovado!')
                     else:
                         relogio.avancaTempo(2)
-                        thiago.atribuirValores(saude=-30, relacionamento=30, dinheiro=-thiago.dinheiro, estresse=100)
+                        thiago.atribuirValores(saude=-30, relacionamento=30, dinheiro=-fabs(thiago.dinheiro), estresse=100)
                         print('''\nNa tentativa de preparar um jantar romântico para a sua esposa, você acabou se queimando e estragando o fogão.
 Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estressado por isso.''')
                 else:
-                    if thiago.dinheiro < 150 and (not 19 <= relogio.horas < 22):
+                    if thiago.dinheiro < 150 and (not 18 <= relogio.horas < 22):
                         print(f'\n\nAinda está muito cedo e você tem somente R$ {thiago.dinheiro:.2f} para preparar o jantar.')
                     elif thiago.dinheiro >= 150:
                         print(f'\n\nAcalma o coração. Ainda não está na hora de jantar.')
@@ -162,7 +174,7 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                 continue
         
         #inicio nikolas
-        elif escolha == 2 and thiago.xp >= 100:
+        elif escolha == 2 and thiago.xp >= 50:
             print('''[italic dark_cyan]Escolha uma das opções de trabalho:[/italic dark_cyan]\n
         [ 1 ] Dar aula no Generation Brasil.
         [ 2 ] Preparar o conteúdo das aulas.
@@ -256,13 +268,13 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                 avancar()
                 continue
                 
-        elif escolha == 2 and thiago.xp < 100:
+        elif escolha == 2 and thiago.xp < 50:
             print('Você precisa adquirir mais experiência para poder trabalhar.')
             avancar()
             continue
                     
         #inicio luiz
-        if escolha == 3:
+        if escolha == 3 and thiago.estresse < 50:
             print('''\n\n[italic dark_cyan]Escolha  uma das opções de estudo:[/italic dark_cyan]\n
             [1] HTML
             [2] PYTHON
@@ -352,6 +364,11 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                     print('\n\nVocê ainda não tem experiência suficiente para estudar isso! Continue estudando para somar cada vez mais conhecimento!')
                 avancar()
                 continue
+
+        if escolha == 3 and thiago.estresse >= 50:
+            print('\nVocê está muito estressado no momento! É melhor você se divertir um pouco.')
+            avancar()
+            continue
         
         #inicio bia
         elif escolha == 4:
@@ -442,7 +459,7 @@ Por isso você perdeu todo o seu dinheiro para consertá-lo e ficou muito estres
                         print('\nLixo no lixo. Tirar o lixo de casa te trouxe um paz indescritível.')
                     else:
                         relogio.avancaTempo(1, 1)
-                        thiago.atribuirValores(saude=-30, estresse=60, dinheiro=-thiago.dinheiro, relacionamento=20) #aplicar fabs aqui
+                        thiago.atribuirValores(saude=-30, estresse=60, dinheiro=-fabs(thiago.dinheiro), relacionamento=20)
                         print('\nEnquanto você tirava o lixo um cachorro foi na sua direção, rasgou o saco de lixo e te mordeu. Você teve que ir ao médico e precisou comprar antibióticos.')
                 else:
                     print('\n\nHoje não é dia do lixeiro passar.')

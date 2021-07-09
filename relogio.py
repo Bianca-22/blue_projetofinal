@@ -1,6 +1,6 @@
 class Relogio:
     def __init__(self):
-        self.__dia = 1
+        self.__dia = 6
         self.__horas = 7
         self.__minutos = 0
     
@@ -38,6 +38,6 @@ class Relogio:
     
     # método para mostrar os dias da semana de forma literal.
     def diaDaSemana(self):
-        semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+        semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
         diaSemana = semana[self.__dia % 7]
         return diaSemana
