@@ -50,6 +50,7 @@ if __name__ == '__main__':
     [ 6 ] Sair do Jogo\n''')
         escolha = int(input('O que você quer fazer? '))
 
+        # condicional para sair do jogo
         if escolha == 6:
             print('\n\nObrigado por jogar!')
             sleep(2)
